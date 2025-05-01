@@ -1,0 +1,106 @@
+<!-- index.html for Joshua's Cyberpunk Portfolio -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joshua Santelices | Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Library for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+  <!-- Background elements -->
+  <div class="bg-cyber"></div>
+  <div class="bg-circuit"></div>
+  
+  <!-- Custom cursor elements -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  
+  <!-- Eto 'yung navbar bro, smooth transition lang para chill yung vibes -->
+  <header>
+    <nav class="navbar navbar-expand-lg glass-panel">
+      <div class="container">
+        <a class="navbar-brand neon-text" href="index.html">JS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tech-stack.html">Tech Stack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Certificates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Page Content - G na to pre, perfect homepage na to 👌 -->
+    <section id="home" class="section">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-md-10">
+            <!-- Profile picture with enhanced animation, now centered at top -->
+            <div class="d-flex justify-content-center mb-5">
+              <div class="profile-pic-container" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="profile-pic enhanced">
+                  <img src="assets/images/profile.png" alt="Joshua Santelices">
+                </div>
+              </div>
+            </div>
+            
+            <!-- Main headline -->
+            <h1 class="mt-4 neon-text" data-aos="fade-up" data-aos-delay="200">Hello, I am Joshua</h1>
+            
+            <!-- Typewriter effect text -->
+            <div class="typewriter-container" data-aos="fade-up" data-aos-delay="400">
+              <p class="typewriter">Aspiring Cybersecurity Professional</p>
+            </div>
+            
+            <!-- CTA Buttons - G na 'to bro, dito yung mga call to action buttons mo -->
+            <div class="cta-buttons mt-4" data-aos="fade-up" data-aos-delay="600">
+              <a href="tech-stack.html" class="cyber-btn me-3"><span class="btn-text">See My Stack</span></a>
+              <a href="contact.html" class="cyber-btn"><span class="btn-text">Let's Talk</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Dark/Light Mode Toggle -->
+  <div class="mode-toggle" id="modeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>

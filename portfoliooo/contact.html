@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Joshua Santelices</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Library for scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Custom CSS Files -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+  <!-- Background elements -->
+  <div class="bg-cyber"></div>
+  <div class="bg-circuit"></div>
+  
+  <!-- Custom cursor elements -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  
+  <!-- Eto yung navbar pre, consistent sa lahat ng pages -->
+  <header>
+    <nav class="navbar navbar-expand-lg glass-panel">
+      <div class="container">
+        <a class="navbar-brand neon-text" href="index.html">JS</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tech-stack.html">Tech Stack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="certificates.html">Certificates</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Contact content - Dito nila ma-cocontact si bro sa cyberpunk style 🤙 -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h1 class="section-title text-center neon-text mb-5" data-aos="fade-up">Get In Touch</h1>
+        
+        <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          Have a question or want to collaborate on a project? Feel free to reach out using the form below or connect with me through social media.
+        </p>
+        
+        <div class="contact-container">
+          <!-- Contact Form -->
+          <div class="contact-form" data-aos="fade-right" data-aos-delay="300">
+            <!-- Form Container -->
+            <div class="form-container glass-panel">
+              <h2 class="mb-4 neon-text">Send a Message</h2>
+              <form id="contactForm">
+                <div class="form-group">
+                  <div class="form-field">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-field">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="form-field">
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                  <span class="btn-text">Send Message</span>
+                </button>
+                
+                <!-- Status message area that shows during submission -->
+                <div class="message-status"></div>
+              </form>
+            </div>
+          </div>
+          
+          <!-- Contact Information -->
+          <div class="contact-info" data-aos="fade-left" data-aos-delay="400">
+            <h2 class="mb-4">Contact Information</h2>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email</h3>
+                <a href="mailto:joshuasantelices@example.com">joshuacarlosantelices@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Location</h3>
+                <p>Cavite, Philippines</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Education</h3>
+                <p>St. Dominic College of Asia</p>
+              </div>
+            </div>
+            
+            <h3 class="mt-5 mb-3">Connect with me</h3>
+            <div class="social-links">
+              <a href="https://github.com/shanti-ryuu" target="_blank" class="social-link" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/joshua-santelices-b81714292/" target="_blank" class="social-link" title="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com/jcxiaoo" target="_blank" class="social-link" title="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://facebook.com/" target="_blank" class="social-link" title="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- UI Resources Section - extra resources para sa mga interested sa design -->
+        <div class="ui-resources" data-aos="fade-up">
+          <h2 class="text-center mb-4 neon-text">UI Resources I Love</h2>
+          
+          <p class="text-center mb-4">
+            Here are some amazing resources that can help you create stunning UI designs like this one.
+          </p>
+          
+          <div class="resources-grid">
+            <div class="resource-item" data-aos="fade-up" data-aos-delay="100">
+              <i class="fas fa-shapes"></i>
+              <h3>UI Universe</h3>
+              <a href="https://uiverse.io" target="_blank">uiverse.io</a>
+            </div>
+            
+            <div class="resource-item" data-aos="fade-up" data-aos-delay="200">
+              <i class="fas fa-magic"></i>
+              <h3>CSS Scan</h3>
+              <a href="https://getcssscan.com" target="_blank">getcssscan.com</a>
+            </div>
+            
+            <div class="resource-item" data-aos="fade-up" data-aos-delay="300">
+              <i class="fas fa-spinner"></i>
+              <h3>CSS Loaders</h3>
+              <a href="https://cssloaders.github.io" target="_blank">cssloaders.github.io</a>
+            </div>
+            
+            <div class="resource-item" data-aos="fade-up" data-aos-delay="400">
+              <i class="fab fa-bootstrap"></i>
+              <h3>Bootstrap Templates</h3>
+              <a href="https://bootstrapmade.com" target="_blank">bootstrapmade.com</a>
+            </div>
+            
+            <div class="resource-item" data-aos="fade-up" data-aos-delay="500">
+              <i class="fas fa-moon"></i>
+              <h3>CSS Shadows</h3>
+              <a href="https://shadows.brumm.af" target="_blank">shadows.brumm.af</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Dark/Light Mode Toggle -->
+  <div class="mode-toggle" id="modeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="js/firebase-config.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>
