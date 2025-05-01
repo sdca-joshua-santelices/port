@@ -414,16 +414,119 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ----- PARALLAX BACKGROUND EFFECT -----
     
-    // Add parallax effect to background - para may subtle movement sa background
-    const bgCircuit = document.querySelector('.bg-circuit');
-    if (bgCircuit) {
+    // Add enhanced parallax effect to 3D background layers
+    const bgLayer1 = document.querySelector('.bg-layer-1');
+    const bgLayer2 = document.querySelector('.bg-layer-2');
+    const bgLayer3 = document.querySelector('.bg-layer-3');
+    
+    if (bgLayer1 && bgLayer2 && bgLayer3) {
+        // Parallax effect on mouse movement
         window.addEventListener('mousemove', function(e) {
+            // Calculate mouse position as percentage of window size
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
             
-            bgCircuit.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+            // Apply different movement amounts to each layer for 3D effect
+            // Layer 1 (base) moves the least, layer 3 (top) moves the most
+            bgLayer2.style.transform = `translate3d(${x * 15}px, ${y * 15}px, 0)`;
+            bgLayer3.style.transform = `translate3d(${x * 25}px, ${y * 25}px, 0)`;
+            
+            // Subtle light effect follows cursor
+            const lightEffect = `radial-gradient(circle at ${x * 100}% ${y * 100}%, 
+                               rgba(var(--primary-color-rgb), 0.03) 0%, 
+                               rgba(var(--primary-color-rgb), 0.01) 20%, 
+                               rgba(0,0,0,0) 60%)`;
+            
+            bgLayer1.style.backgroundImage = `${lightEffect}, radial-gradient(circle at center, #121824 0%, #080810 100%)`;
+            
+            // In light mode, adjust the gradient colors
+            if (document.body.classList.contains('light-mode')) {
+                bgLayer1.style.backgroundImage = `${lightEffect}, radial-gradient(circle at center, #f0f4ff 0%, #e0e5eb 100%)`;
+            }
+        });
+        
+        // Parallax effect on scroll
+        window.addEventListener('scroll', function() {
+            const scrollPos = window.scrollY;
+            const windowHeight = window.innerHeight;
+            
+            // Calculate scroll percentage
+            const scrollPercent = scrollPos / windowHeight;
+            
+            // Apply subtle parallax on scroll
+            bgLayer2.style.transform += ` translateY(${scrollPercent * -10}px)`;
+            bgLayer3.style.transform += ` translateY(${scrollPercent * -20}px)`;
         });
     }
+    
+    // Add floating particles to the background for extra depth
+    function createParticles() {
+        // Only create particles if we have the background layers
+        if (!bgLayer3) return;
+        
+        // Create particle container
+        const particleContainer = document.createElement('div');
+        particleContainer.className = 'particles-container';
+        particleContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -999;
+            pointer-events: none;
+        `;
+        document.body.appendChild(particleContainer);
+        
+        // Create particles
+        const particleCount = 30;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            
+            // Randomize particle properties
+            const size = Math.random() * 3 + 1;
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 5;
+            
+            // Randomize between primary and secondary color
+            const useSecondary = Math.random() > 0.7;
+            const color = useSecondary ? 'var(--secondary-color)' : 'var(--primary-color)';
+            
+            // Style the particle
+            particle.className = 'bg-particle';
+            particle.style.cssText = `
+                position: absolute;
+                top: ${y}%;
+                left: ${x}%;
+                width: ${size}px;
+                height: ${size}px;
+                background-color: ${color};
+                border-radius: 50%;
+                opacity: ${Math.random() * 0.3 + 0.1};
+                animation: floatParticle ${duration}s ease-in-out ${delay}s infinite;
+            `;
+            
+            particleContainer.appendChild(particle);
+        }
+        
+        // Add floating animation style
+        const particleStyle = document.createElement('style');
+        particleStyle.innerHTML = `
+            @keyframes floatParticle {
+                0% { transform: translate(0, 0); }
+                25% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px); }
+                50% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px); }
+                75% { transform: translate(${Math.random() * 30 - 15}px, ${Math.random() * 30 - 15}px); }
+                100% { transform: translate(0, 0); }
+            }
+        `;
+        document.head.appendChild(particleStyle);
+    }
+    
+    // Initialize particles
+    createParticles();
     
     // ----- RESPONSIVE ADJUSTMENTS -----
     
